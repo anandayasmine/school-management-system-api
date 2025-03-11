@@ -1,4 +1,4 @@
-# NodeJS API Assessment
+# School Management System
 
 This API provides endpoints for managing teacher-student relationships, suspending students, and sending notifications.
 
@@ -79,6 +79,62 @@ INSERT INTO teacher_student (teacher_id, student_id) VALUES
 (2, 3),  -- teacher2 → student3 (suspended)
 (3, 4),  -- teacher3 → student4
 (3, 5);  -- teacher3 → student5
+```
+
+
+## Running the API
+
+### Prerequisites
+Ensure you have the following installed:
+- Node.js (>= 16.x)
+- MySQL Server
+- npm (Node Package Manager)
+
+### Installation and Setup
+
+1. Clone the repository:
+   ```sh
+   git clone <repository-url>
+   cd <repository-folder>
+   ```
+
+2. Install dependencies:
+   ```sh
+   npm install
+   ```
+
+3. Configure the `.env` file:
+   - Create a `.env` file in the root directory.
+   - Add the following environment variables:
+     ```env
+     DB_HOST=localhost
+     DB_USER=root
+     DB_PASSWORD=yourpassword
+     DB_NAME=school_db
+     PORT=3000
+     ```
+
+4. Run database migrations (if applicable):
+   ```sh
+   npm run migrate
+   ```
+
+5. Start the API server:
+   ```sh
+   npm start
+   ```
+   The server should now be running at `http://localhost:3000` or any of the port you set on .env.
+
+### Running in Development Mode
+To run the API with hot-reloading:
+```sh
+npm run dev
+```
+
+### Running Tests
+Run unit tests with:
+```sh
+npm test
 ```
 
 ## Postman Collection

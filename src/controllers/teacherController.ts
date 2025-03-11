@@ -39,7 +39,7 @@ export const registerStudents = async (req: Request, res: Response): Promise<Res
       );
     }
 
-    return res.status(200).json({ message: "Students have been registered successfully" });
+    return res.status(204).send()
   } catch (error) {
     return res.status(500).json({ message: "Server error", error });
   }
@@ -88,7 +88,7 @@ export const suspendStudent = async (req: Request, res: Response) => {
       "UPDATE students SET suspended = TRUE WHERE email = ?",
       [student]
     );
-    return res.status(200).json({ message: `Student ${student} has been suspended` });
+    return res.status(204).send()
   } catch (error) {
     return res.status(500).json({ message: "Server error", error });
   }
