@@ -1,0 +1,579 @@
+{
+	"info": {
+		"_postman_id": "3c58f686-80b5-4c1f-9460-10d37fe5b5ed",
+		"name": "School Management System",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34613624"
+	},
+	"item": [
+		{
+			"name": "Register One or More Students to a Teacher",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n           \"teacher\": \"teacher1@example.com\",\r\n           \"students\": [\r\n             \"student4@example.com\",\r\n             \"student5@example.com\"\r\n           ]\r\n         }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"register"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Register One or More Students to a Teacher",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n           \"teacher\": \"teacher1@example.com\",\r\n           \"students\": [\r\n             \"student4@example.com\",\r\n             \"student5@example.com\"\r\n           ]\r\n         }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"register"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "56"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"38-yTwcBnYV8cJ7wzMwGtkkpG+6ab0\""
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 11 Mar 2025 15:46:14 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Students have been registered successfully\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Retrieve Common Students",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/commonstudents?teacher=teacher1@example.com&teacher=teacher2@example.com",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"commonstudents"
+					],
+					"query": [
+						{
+							"key": "teacher",
+							"value": "teacher1@example.com"
+						},
+						{
+							"key": "teacher",
+							"value": "teacher2@example.com"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Multiple Teacher",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/commonstudents?teacher=teacher1@example.com&teacher=teacher2@example.com",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"commonstudents"
+							],
+							"query": [
+								{
+									"key": "teacher",
+									"value": "teacher1@example.com"
+								},
+								{
+									"key": "teacher",
+									"value": "teacher2@example.com"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "37"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"25-gpluva8SC7mIVzWmVzWtBjSaat4\""
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 11 Mar 2025 15:44:59 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"students\": [\n        \"student2@example.com\"\n    ]\n}"
+				},
+				{
+					"name": "Single Teacher",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/commonstudents?teacher=teacher1@example.com",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"commonstudents"
+							],
+							"query": [
+								{
+									"key": "teacher",
+									"value": "teacher1@example.com"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "106"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"6a-AAvM3Y6F5yEhSCnLV5cJDiU6MdA\""
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 11 Mar 2025 15:37:24 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"students\": [\n        \"student1@example.com\",\n        \"student2@example.com\",\n        \"student4@example.com\",\n        \"student5@example.com\"\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Retrieve Students Who Can Receive a Notification",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n           \"teacher\": \"teacher1@example.com\",\r\n           \"notification\": \"Hello students! @student4@example.com\"\r\n         }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/retrievefornotifications",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"retrievefornotifications"
+					]
+				},
+				"description": "Generated from cURL: curl -X POST http://localhost:3000/api/retrievefornotifications \\\r\n     -H \"Content-Type: application/json\" \\\r\n     -d '{\r\n           \"teacher\": \"teacher1@example.com\",\r\n           \"notification\": \"Hello students! @student4@example.com\"\r\n         }'\r\n"
+			},
+			"response": [
+				{
+					"name": "Retrieve Students Who Can Receive a Notification",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n           \"teacher\": \"teacher1@example.com\",\r\n           \"notification\": \"Hello students! @student4@example.com\"\r\n         }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/retrievefornotifications",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"retrievefornotifications"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "85"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"55-n/C49cfNw6iAIA98PMyaVMWWwr4\""
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 11 Mar 2025 15:43:56 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"recipients\": [\n        \"student1@example.com\",\n        \"student4@example.com\",\n        \"student5@example.com\"\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Suspend a Student",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n           \"student\": \"student2@example.com\"\r\n         }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/suspend",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"suspend"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Suspend a Student",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n           \"student\": \"student2@example.com\"\r\n         }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/suspend",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"suspend"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "61"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"3d-UYS2cYcVTQgKsGCUxDQjuAd032Q\""
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 11 Mar 2025 15:40:31 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Student student2@example.com has been suspended\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Error Response Example",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"register"
+					]
+				},
+				"description": "Generated from cURL: curl -X POST http://localhost:3000/api/register \\\r\n     -H \"Content-Type: application/json\" \\\r\n     -d '{}'\r\n"
+			},
+			"response": [
+				{
+					"name": "Error Response Example",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"register"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "32"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"20-miPGPWKKgbOoLcgaCnvWLXZytd0\""
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 11 Mar 2025 15:51:31 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Invalid input data\"\n}"
+				}
+			]
+		}
+	]
+}
