@@ -107,11 +107,12 @@ Ensure you have the following installed:
    - Create a `.env` file in the root directory.
    - Add the following environment variables:
      ```env
+     PORT=running_api_port
+     DB_PORT=running_db_port
      DB_HOST=localhost
      DB_USER=root
      DB_PASSWORD=yourpassword
      DB_NAME=school_db
-     PORT=3000
      ```
 
 4. Run database migrations (if applicable):
